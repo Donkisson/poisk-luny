@@ -672,38 +672,58 @@ svg.leaflet-image-layer.leaflet-interactive path {
 <style>
 :root{color-scheme:light;--ink:#162f2a;--muted:#526661;--bg:#f6f7ef;--line:#dae2d7;--green:#19705b;--orange:#9c461a;--blue:#355abb;--grey:#556360}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif}a{color:var(--green);text-underline-offset:3px}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #315cbb;outline-offset:3px}
-header{background:#132e27;color:#f6f8ef}header a{color:#e7f4e8}nav,.intro,main,footer{width:min(1450px,calc(100% - 80px));margin:auto}nav{min-height:61px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #ffffff26}nav strong{font-size:.92rem;letter-spacing:.03em}.brand{display:flex;align-items:center;gap:.65rem}.moon{width:23px;height:23px;border-radius:50%;box-shadow:inset 8px -4px 0 #f5d790;transform:rotate(-18deg)}nav a{font-size:.87rem;font-weight:650;text-decoration:none}nav a:hover{text-decoration:underline}.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px 20px}.intro{padding:28px 0 32px;display:flex;justify-content:space-between;align-items:end;gap:24px}.intro h1{font-size:clamp(2.7rem,5vw,5.1rem);line-height:1;letter-spacing:-.073em;margin:0 0 12px;font-weight:740}.intro p{color:#d2ded2;margin:0;max-width:58ch}.date{font-size:.87rem;color:#f7dfaa;white-space:nowrap}
-main{padding:24px 0 28px}.tools{margin-bottom:16px}.filters{display:flex;flex-wrap:wrap;gap:7px}.filter,.reset{display:inline-flex;gap:.4rem;align-items:center;border:1px solid var(--line);border-radius:100px;padding:7px 12px;background:#fff;color:var(--ink);white-space:nowrap;font-size:.88rem;font-weight:640}.filter[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}.dot{width:9px;height:9px;border-radius:50%;background:var(--color);display:inline-block;flex:none}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(315px,27%);gap:15px;align-items:stretch}.map-panel,.journal{min-width:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}.map-head,.journal-head{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:55px}.map-head h2,.journal-head h2{font-size:.95rem;margin:0}.map-head .reset{font-size:.77rem;padding:4px 10px}.journal-head span{font-size:.8rem;color:var(--muted)}#map{height:clamp(420px,65vh,740px);background:#e0e9dc;position:relative;z-index:0;color:var(--ink)}#fallback{margin:0;padding:22px;max-width:48ch}.area-key{display:inline-block;width:13px;height:10px;border:1px solid #19705b;border-radius:3px;background:#58a98266;vertical-align:baseline;margin-right:5px}.area-key.shelter-key{border:2px dashed #007b89;background:#70c5cf55}.legend-line{margin:2px 0}.map-help{margin:0 0 3px}.map-message{margin:0;padding:10px 16px;background:#fff4e0;color:#51442e;font-size:.84rem}.legend{padding:11px 16px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}.journal{display:flex;flex-direction:column}.records{height:clamp(450px,calc(65vh + 40px),780px);overflow:auto;padding:0 11px 11px;scrollbar-width:thin}.card{background:#fcfcf9;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px;border-left:4px solid var(--color)}.card[data-active=true]{background:#f1f5eb;box-shadow:inset 0 0 0 1px var(--green)}.card small{color:var(--muted);display:block;font-size:.73rem}.card h3{font-size:.99rem;line-height:1.2;letter-spacing:-.02em;margin:5px 0}.card.has-point{cursor:pointer}.card-action{display:inline-flex;align-items:center;min-height:34px;margin-top:9px;padding:4px 11px;border:1px solid #b8cdbf;border-radius:7px;background:#edf4ed;color:var(--ink);font-size:.82rem;font-weight:700}.card.has-point:hover .card-action{background:#e0efe4}.leaflet-popup-content a[aria-current=true]{font-weight:800;text-decoration-thickness:2px}.badge{color:var(--color);font-size:.7rem;font-weight:760;text-transform:uppercase;letter-spacing:.05em}.card p{font-size:.83rem;margin:7px 0 5px}.card .meta{display:grid;gap:3px;border-top:1px solid var(--line);padding-top:6px;margin-top:9px}.empty{padding:12px;color:var(--muted)}footer{color:var(--muted);font-size:.8rem;padding-bottom:22px}.pin{border:3px solid white;border-radius:50%;display:grid;place-items:center;color:white;background:var(--color);font:700 11px/1 system-ui;box-shadow:0 1px 5px #26332c90}.pin.cluster{font-size:14px}
+header{background:#132e27;color:#f6f8ef}
+.intro,main,footer{width:min(1450px,calc(100% - 80px));margin:auto}
+.intro{padding:20px 0 22px;display:flex;justify-content:space-between;align-items:end;gap:18px}
+.intro h1{font-size:clamp(2.4rem,4.4vw,4.6rem);line-height:1;letter-spacing:-.06em;margin:0 0 9px;font-weight:740}
+.intro p{color:#d2ded2;margin:0;max-width:68ch}
+.intro-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.intro-actions a{display:inline-flex;align-items:center;min-height:44px;padding:6px 13px;border-radius:8px;background:#e9f2e9;color:#132e27;font-size:.875rem;font-weight:720;text-decoration:none}
+.intro-actions a:last-child{background:#f7dfaa}
+.date{font-size:.87rem;color:#f7dfaa;white-space:nowrap}
+main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-items:center;border:1px solid var(--line);border-radius:100px;padding:7px 12px;background:#fff;color:var(--ink);white-space:nowrap;font-size:.88rem;font-weight:640}.filter[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}.dot{width:9px;height:9px;border-radius:50%;background:var(--color);display:inline-block;flex:none}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(315px,27%);gap:15px;align-items:stretch}.map-panel,.journal{min-width:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}.map-head,.journal-head{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:55px}.map-head h2,.journal-head h2{font-size:.95rem;margin:0}.map-head .reset{font-size:.77rem;padding:4px 10px}.journal-head span{font-size:.8rem;color:var(--muted)}#map{height:clamp(420px,65vh,740px);background:#e0e9dc;position:relative;z-index:0;color:var(--ink)}#fallback{margin:0;padding:22px;max-width:48ch}.area-key{display:inline-block;width:13px;height:10px;border:1px solid #19705b;border-radius:3px;background:#58a98266;vertical-align:baseline;margin-right:5px}.area-key.shelter-key{border:2px dashed #007b89;background:#70c5cf55}.legend-line{margin:2px 0}.map-help{margin:0 0 3px}.map-message{margin:0;padding:10px 16px;background:#fff4e0;color:#51442e;font-size:.84rem}.legend{padding:11px 16px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}.journal{display:flex;flex-direction:column}.records{height:clamp(450px,calc(65vh + 40px),780px);overflow:auto;padding:0 11px 11px;scrollbar-width:thin}.card{background:#fcfcf9;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px;border-left:4px solid var(--color)}.card[data-active=true]{background:#f1f5eb;box-shadow:inset 0 0 0 1px var(--green)}.card small{color:var(--muted);display:block;font-size:.73rem}.card h3{font-size:.99rem;line-height:1.2;letter-spacing:-.02em;margin:5px 0}.card.has-point{cursor:pointer}.card-action{display:inline-flex;align-items:center;min-height:34px;margin-top:9px;padding:4px 11px;border:1px solid #b8cdbf;border-radius:7px;background:#edf4ed;color:var(--ink);font-size:.82rem;font-weight:700}.card.has-point:hover .card-action{background:#e0efe4}.leaflet-popup-content a[aria-current=true]{font-weight:800;text-decoration-thickness:2px}.badge{color:var(--color);font-size:.7rem;font-weight:760;text-transform:uppercase;letter-spacing:.05em}.card p{font-size:.83rem;margin:7px 0 5px}.card .meta{display:grid;gap:3px;border-top:1px solid var(--line);padding-top:6px;margin-top:9px}.empty{padding:12px;color:var(--muted)}footer{color:var(--muted);font-size:.8rem;padding-bottom:22px}.pin{border:3px solid white;border-radius:50%;display:grid;place-items:center;color:white;background:var(--color);font:700 11px/1 system-ui;box-shadow:0 1px 5px #26332c90}.pin.cluster{font-size:14px}
 .leaflet-popup-content .popup-route{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;padding:6px 11px;border-radius:7px;background:var(--green);color:#fff;font-weight:700;text-decoration:none}.leaflet-popup-content p{margin:.45em 0}.leaflet-popup-content a{color:var(--green)}.leaflet-popup-content strong{font-size:1.03em}
 .profile{display:grid;grid-template-columns:minmax(255px,1fr) minmax(0,1.85fr);gap:24px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:16px;scroll-margin-top:16px}.profile h2{font-size:clamp(1.35rem,2.6vw,2rem);letter-spacing:-.04em;line-height:1.16;margin:0 0 10px}.profile p{margin:0 0 10px;color:var(--muted);max-width:48ch}.profile .phone{display:inline-flex;align-items:center;background:#152f27;color:#fff;border-radius:9px;padding:9px 13px;font-size:.88rem;font-weight:700;text-decoration:none;margin:4px 0 9px}.profile .phone:hover{background:#246351}.profile .source-link{display:block;font-size:.78rem}.portraits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.portrait{display:block;width:100%;padding:0;border:0;border-radius:10px;background:#deddd3;overflow:hidden;cursor:zoom-in}.portrait img{display:block;width:100%;height:auto;aspect-ratio:9/14;object-fit:cover;object-position:center}.photo-dialog{max-width:min(96vw,660px);border:0;border-radius:14px;padding:8px;background:#172d27;color:#fff}.photo-dialog::backdrop{background:#0d1b18d9}.photo-dialog button{display:block;margin:0 0 6px auto;background:#fff;color:#172d27;border:0;border-radius:6px;padding:5px 10px}.photo-dialog img{display:block;max-height:76vh;max-width:100%;width:auto;height:auto;margin:auto;border-radius:7px}.pin.origin-pin{font-size:18px;box-shadow:0 0 0 3px #82347655,0 2px 6px #26332c85}
 .map-panel,.journal,.card{scroll-margin-top:10px}
-.mobile-journal,.map-help-touch{display:none}
+.map-help-touch,.filter-short{display:none}
+.browser-notice{margin:0 0 10px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.browser-notice-row{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:6px 10px}
+.browser-notice-row p{margin:0;font-size:.875rem;color:var(--muted)}
+.browser-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:5px 9px;border:1px solid #aec4b3;border-radius:8px;background:#eaf3eb;color:var(--ink);font-size:.875rem;font-weight:720;text-decoration:none;text-align:center}
+.browser-notice-row .browser-button{flex:none}
+.browser-help{border-top:1px solid var(--line);padding:9px 10px 10px;font-size:.875rem}
+.browser-help p{margin:0 0 7px}
+.browser-help input{width:min(100%,29rem);padding:7px;margin-top:7px}
+.browser-feedback{margin-left:8px;color:var(--muted)}
+.map-surface{position:relative}
+.filters{position:absolute;z-index:1;top:49px;right:7px;display:grid;gap:4px;width:178px}
+.filters .filter{width:100%;min-height:34px;justify-content:flex-start;white-space:normal;text-align:left;line-height:1.15;box-shadow:0 1px 3px #132e2726}
+.filters .filter[aria-pressed=true] .dot{outline:1px solid #fff}
 .leaflet-top .yandex-map-brand{display:block;margin:0}
 .yandex-map-brand img{display:block}
 
 @media(max-width:940px){
-  nav,.intro,main,footer{width:calc(100% - 32px)}
+  .intro,main,footer{width:calc(100% - 32px)}
   .workspace{grid-template-columns:minmax(0,1fr) minmax(275px,35%)}
 }
 @media(max-width:740px){
-  nav,.intro,main,footer{width:calc(100% - 24px)}
-  nav{min-height:54px;gap:8px}
-  .brand{gap:6px}
-  .moon{width:19px;height:19px}
-  .nav-links{gap:0 12px}
-  .nav-links a{display:inline-flex;align-items:center;min-height:44px;font-size:.78rem}
-  .intro{align-items:start;flex-direction:column;gap:10px;padding:20px 0}
-  .intro h1{font-size:clamp(2rem,8.5vw,3.5rem);letter-spacing:-.06em;margin-bottom:9px}
-  .intro p{font-size:.95rem}
+  .intro,main,footer{width:calc(100% - 24px)}
+  .intro{align-items:start;flex-direction:column;gap:7px;padding:14px 0}
+  .intro h1{font-size:clamp(2rem,8.5vw,3.5rem);margin-bottom:7px}
+  .intro p{font-size:.94rem}
+  .intro-actions{margin-top:8px}
   .date{white-space:normal;font-size:.81rem}
-  main{padding-top:14px}
-  .tools{margin-bottom:12px}
-  .filter{min-height:44px;padding:6px 10px;font-size:.82rem}
+  main{padding-top:9px}
+  .filters{width:96px}
+  .filters .filter{min-height:44px;padding:4px 5px;gap:4px}
+  .filter .dot{width:7px;height:7px}
+  .filter-full{display:none}
+  .filter-short{display:inline}
   .workspace{grid-template-columns:minmax(0,1fr);gap:12px}
   .map-head,.journal-head{min-height:48px;padding:6px 12px;gap:8px}
   .map-head h2,.journal-head h2{font-size:.92rem}
   .map-head .reset{min-height:44px;padding:4px 8px}
-  #map{height:54vh;height:clamp(275px,54svh,490px)}
+  #map{height:370px;height:clamp(355px,57svh,510px)}
   .legend{padding:9px 12px}
   .records{height:auto;overflow:visible;padding:0 9px 8px}
   .card{padding:11px}
@@ -722,11 +742,33 @@ main{padding:24px 0 28px}.tools{margin-bottom:16px}.filters{display:flex;flex-wr
 </style>
 </head>
 <body>
-<header><nav><div class="brand"><span class="moon" aria-hidden="true"></span><strong>Поиск Луны</strong></div><div class="nav-links"><a class="mobile-journal" href="#search-journal">Журнал</a><a href="#luna">Фото и контакт</a></div></nav>
-<section class="intro"><div><h1>Где искали Луну</h1><p>Луна пропала вечером 10 ноября. У наблюдений на карте пока нет подтверждения фото или видео.</p></div><div class="date" id="date">Сводка на 18 ноября 2026, 17:04</div></section></header>
+<header>
+  <section class="intro">
+    <div>
+      <h1>Поиск Луны</h1>
+      <p>Луна пропала вечером 10 ноября у дома № 1 на ул. Матусевича. У наблюдений на карте пока нет подтверждения фото или видео.</p>
+      <div class="intro-actions">
+        <a href="#search-journal">Журнал</a>
+        <a href="#luna">Фото и контакт</a>
+      </div>
+    </div>
+    <div class="date" id="date">Сводка на 18 ноября 2026, 17:04</div>
+  </section>
+</header>
 <main>
-<div class="tools"><div class="filters" id="filters" aria-label="Фильтр записей"></div></div>
-<div class="workspace"><section class="map-panel" id="search-map" aria-labelledby="map-title"><div class="map-head"><h2 id="map-title" tabindex="-1">Минск и окрестности</h2><button class="reset" type="button" id="fit">Показать все точки</button></div><div id="map" aria-label="Карта мест поиска"><p id="fallback">Карта загружается. Адреса и отчёты доступны в журнале.</p></div><p class="map-message" id="basemap-status" role="status" hidden></p><div class="legend"><p class="map-help">Нажми на метку, чтобы посмотреть сведения о точке.</p><p class="map-help map-help-wheel">Кликни по карте, чтобы менять масштаб колёсиком.</p><p class="map-help map-help-touch">Масштаб можно менять двумя пальцами.</p><p class="legend-line"><span class="area-key" aria-hidden="true"></span>Зелёная заливка — примерная зона проведённого обхода.</p><p class="legend-line"><span class="area-key shelter-key" aria-hidden="true"></span>Бирюзовый контур — район, где стоит искать сухие укрытия. Температура и присутствие Луны здесь не подтверждены.</p><p class="legend-line">Линия пунктира соединяет ориентиры маршрута. Записи без проверенной точки доступны в журнале.</p></div></section>
+  <div class="browser-notice">
+    <div class="browser-notice-row">
+      <p>Карта удобнее в обычном браузере.</p>
+      <a class="browser-button" id="open-browser" href="#browser-help" aria-controls="browser-help" aria-expanded="false">Открыть в браузере</a>
+    </div>
+    <div class="browser-help" id="browser-help" hidden>
+      <p>В Telegram нажми значок компаса внизу справа или выбери <strong>«Открыть в браузере»</strong> в меню <strong>⋯</strong>.</p>
+      <button class="browser-button" id="copy-site-url" type="button">Скопировать ссылку</button>
+      <span class="browser-feedback" id="browser-feedback" role="status"></span>
+      <input type="url" id="browser-site-url" aria-label="Ссылка на сайт" readonly hidden>
+    </div>
+  </div>
+<div class="workspace"><section class="map-panel" id="search-map" aria-labelledby="map-title"><div class="map-head"><h2 id="map-title" tabindex="-1">Минск и окрестности</h2><button class="reset" type="button" id="fit">Показать все точки</button></div><div class="map-surface"><div id="map" aria-label="Карта мест поиска"><p id="fallback">Карта загружается. Адреса и отчёты доступны в журнале.</p></div><div class="filters" id="filters" role="group" aria-label="Фильтр записей"></div></div><p class="map-message" id="basemap-status" role="status" hidden></p><div class="legend"><p class="map-help">Нажми на метку, чтобы посмотреть сведения о точке.</p><p class="map-help map-help-wheel">Кликни по карте, чтобы менять масштаб колёсиком.</p><p class="map-help map-help-touch">Масштаб можно менять двумя пальцами.</p><p class="legend-line"><span class="area-key" aria-hidden="true"></span>Зелёная заливка — примерная зона проведённого обхода.</p><p class="legend-line"><span class="area-key shelter-key" aria-hidden="true"></span>Бирюзовый контур — район, где стоит искать сухие укрытия. Температура и присутствие Луны здесь не подтверждены.</p><p class="legend-line">Линия пунктира соединяет ориентиры маршрута. Записи без проверенной точки доступны в журнале.</p></div></section>
 <section class="journal" id="search-journal" aria-labelledby="journal-title"><div class="journal-head"><h2 id="journal-title">Журнал поиска</h2><span id="count" role="status"></span></div><div id="records" class="records"></div></section></div>
 <section class="profile" id="luna" aria-labelledby="luna-title">
   <div>
@@ -1182,6 +1224,9 @@ const types = {
   t:['Ещё проверить','#355abb'],
   h:['Возможные укрытия','#007b89'],
 };
+const shortFilterLabels = {
+  all:'Все', o:'Пропажа', s:'Видели', d:'Искали', t:'Проверить', h:'Укрытия',
+};
 const journal = document.getElementById('records');
 
 const filters = document.getElementById('filters');
@@ -1214,6 +1259,13 @@ let visible = records, filter = 'all', active = '';
 if(map){
   document.getElementById('fallback').remove();
   L.control.scale({imperial:false}).addTo(map);
+  map.on('resize', () => {
+    for (const marker of new Set(markers.values())) {
+      const popup = marker.getPopup();
+      L.setOptions(popup, popupLayout());
+      if (popup.isOpen()) popup.update();
+    }
+  });
 
   const surface = map.getContainer();
   surface.addEventListener('click', () => map.scrollWheelZoom.enable(), {capture:true});
@@ -1373,6 +1425,28 @@ function setActive(id, fromMap){
   }
 }
 
+function mapFilterGutter() {
+  return filters.offsetWidth + 14;
+}
+
+function popupLayout() {
+  const right = mapFilterGutter();
+  return {
+    maxWidth:Math.min(270, Math.max(115, map.getSize().x - right - 59)),
+    autoPanPaddingTopLeft:[8,10],
+    autoPanPaddingBottomRight:[right,10],
+  };
+}
+
+function fitSearchArea(points, maxZoom) {
+  map.fitBounds(points, {
+    paddingTopLeft:[24,24],
+    paddingBottomRight:[mapFilterGutter()+14,24],
+    maxZoom,
+    animate:false,
+  });
+}
+
 function showRecordOnMap(id){
   const marker = markers.get(id);
   if (!marker) return;
@@ -1381,7 +1455,7 @@ function showRecordOnMap(id){
   map.stop();
   const route = visible.find(row => row[0] === id)?.[8];
   if (route?.length > 1) {
-    map.fitBounds(route, {padding:[24,24], maxZoom:16, animate:false});
+    fitSearchArea(route, 16);
   } else {
     map.setView(marker.getLatLng(), Math.max(map.getZoom(), 16), {animate:false});
   }
@@ -1394,7 +1468,7 @@ function showRecordOnMap(id){
 function fitMap(){
   if(!map) return;
   const points=visible.flatMap(row=>row[8]|| (row[3]?[row[3]]:[]));
-  if(points.length) map.fitBounds(points,{padding:[44,42],maxZoom:15,animate:false});
+  if(points.length) fitSearchArea(points, 15);
 }
 function render(){
 
@@ -1505,7 +1579,7 @@ function render(){
     const routeLink = make('a','popup-route','Открыть в Яндекс Картах');
     routeLink.href = routeUrl;
     popup.append(routeLink);
-    marker.bindPopup(popup);
+    marker.bindPopup(popup, popupLayout());
     marker.on('click',()=>setActive(id,true));
   }
 
@@ -1516,13 +1590,15 @@ for(const [key,[name,color]] of Object.entries(types)){
   const b=make('button','filter');
   b.type='button';
   b.dataset.filter=key;
+  b.title=name;
+  b.setAttribute('aria-label',name);
   b.setAttribute('aria-pressed',String(key===filter));
   if(key!=='all'){
     const dot=make('span','dot');
     dot.style.setProperty('--color',color);
     b.append(dot);
   }
-  b.append(name);
+  b.append(make('span','filter-full',name),make('span','filter-short',shortFilterLabels[key]));
   b.onclick=()=>{
     filter=key;active='';
     for(const btn of filters.children) btn.setAttribute('aria-pressed',String(btn===b));
@@ -1530,6 +1606,44 @@ for(const [key,[name,color]] of Object.entries(types)){
   };
   filters.append(b);
 }
+
+const siteUrl = 'https://donkisson.github.io/poisk-luny/';
+const openBrowser = document.getElementById('open-browser');
+const browserHelp = document.getElementById('browser-help');
+const browserFeedback = document.getElementById('browser-feedback');
+const copyField = document.getElementById('browser-site-url');
+const isAndroid = /Android/i.test(navigator.userAgent);
+
+function showBrowserHelp(show) {
+  browserHelp.hidden = !show;
+  openBrowser.setAttribute('aria-expanded', String(show));
+}
+
+if (isAndroid) {
+  const browserFallback = encodeURIComponent(siteUrl+'#browser-help');
+  openBrowser.href = siteUrl.replace(/^https:\/\//,'intent://')
+    + '#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;'
+    + 'S.browser_fallback_url=' + browserFallback + ';end';
+}
+openBrowser.addEventListener('click', event => {
+  if (!isAndroid) event.preventDefault();
+  showBrowserHelp(isAndroid || browserHelp.hidden);
+});
+if (location.hash === '#browser-help') showBrowserHelp(true);
+
+document.getElementById('copy-site-url').addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(siteUrl);
+    copyField.hidden = true;
+    browserFeedback.textContent = 'Ссылка скопирована.';
+  } catch {
+    copyField.value = siteUrl;
+    copyField.hidden = false;
+    copyField.focus();
+    copyField.select();
+    browserFeedback.textContent = 'Скопируй выделенную ссылку.';
+  }
+});
 
 fit.onclick=fitMap;
 render();
