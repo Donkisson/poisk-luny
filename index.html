@@ -677,18 +677,36 @@ header{background:#132e27;color:#f6f8ef}
 .intro{padding:20px 0 22px;display:flex;justify-content:space-between;align-items:end;gap:18px}
 .intro h1{font-size:clamp(2.4rem,4.4vw,4.6rem);line-height:1;letter-spacing:-.06em;margin:0 0 9px;font-weight:740}
 .intro p{color:#d2ded2;margin:0;max-width:68ch}
-.intro-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.intro-actions a{display:inline-flex;align-items:center;min-height:44px;padding:6px 13px;border-radius:8px;background:#e9f2e9;color:#132e27;font-size:.875rem;font-weight:720;text-decoration:none}
+.intro-summary{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:12px;align-items:start;max-width:68ch}
+.intro-actions{display:grid;gap:6px}
+.intro-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 13px;border-radius:8px;background:#e9f2e9;color:#132e27;font-size:.875rem;font-weight:720;text-decoration:none}
 .intro-actions a:last-child{background:#f7dfaa}
 .date{font-size:.87rem;color:#f7dfaa;white-space:nowrap}
 main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-items:center;border:1px solid var(--line);border-radius:100px;padding:7px 12px;background:#fff;color:var(--ink);white-space:nowrap;font-size:.88rem;font-weight:640}.filter[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}.dot{width:9px;height:9px;border-radius:50%;background:var(--color);display:inline-block;flex:none}.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(315px,27%);gap:15px;align-items:stretch}.map-panel,.journal{min-width:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}.map-head,.journal-head{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:55px}.map-head h2,.journal-head h2{font-size:.95rem;margin:0}.map-head .reset{font-size:.77rem;padding:4px 10px}.journal-head span{font-size:.8rem;color:var(--muted)}#map{height:clamp(420px,65vh,740px);background:#e0e9dc;position:relative;z-index:0;color:var(--ink)}#fallback{margin:0;padding:22px;max-width:48ch}.area-key{display:inline-block;width:13px;height:10px;border:1px solid #19705b;border-radius:3px;background:#58a98266;vertical-align:baseline;margin-right:5px}.area-key.shelter-key{border:2px dashed #007b89;background:#70c5cf55}.legend-line{margin:2px 0}.map-help{margin:0 0 3px}.map-message{margin:0;padding:10px 16px;background:#fff4e0;color:#51442e;font-size:.84rem}.legend{padding:11px 16px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}.journal{display:flex;flex-direction:column}.records{height:clamp(450px,calc(65vh + 40px),780px);overflow:auto;padding:0 11px 11px;scrollbar-width:thin}.card{background:#fcfcf9;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px;border-left:4px solid var(--color)}.card[data-active=true]{background:#f1f5eb;box-shadow:inset 0 0 0 1px var(--green)}.card small{color:var(--muted);display:block;font-size:.73rem}.card h3{font-size:.99rem;line-height:1.2;letter-spacing:-.02em;margin:5px 0}.card.has-point{cursor:pointer}.card-action{display:inline-flex;align-items:center;min-height:34px;margin-top:9px;padding:4px 11px;border:1px solid #b8cdbf;border-radius:7px;background:#edf4ed;color:var(--ink);font-size:.82rem;font-weight:700}.card.has-point:hover .card-action{background:#e0efe4}.leaflet-popup-content a[aria-current=true]{font-weight:800;text-decoration-thickness:2px}.badge{color:var(--color);font-size:.7rem;font-weight:760;text-transform:uppercase;letter-spacing:.05em}.card p{font-size:.83rem;margin:7px 0 5px}.card .meta{display:grid;gap:3px;border-top:1px solid var(--line);padding-top:6px;margin-top:9px}.empty{padding:12px;color:var(--muted)}footer{color:var(--muted);font-size:.8rem;padding-bottom:22px}.pin{border:3px solid white;border-radius:50%;display:grid;place-items:center;color:white;background:var(--color);font:700 11px/1 system-ui;box-shadow:0 1px 5px #26332c90}.pin.cluster{font-size:14px}
-.leaflet-popup-content .popup-route{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;padding:6px 11px;border-radius:7px;background:var(--green);color:#fff;font-weight:700;text-decoration:none}.leaflet-popup-content p{margin:.45em 0}.leaflet-popup-content a{color:var(--green)}.leaflet-popup-content strong{font-size:1.03em}
+.popup-records{max-height:136px;overflow:auto;overscroll-behavior:contain}
+.popup-actions{display:grid;gap:5px;margin-top:7px}
+.leaflet-popup-content .popup-action{display:flex;align-items:center;justify-content:center;min-height:44px;padding:5px 8px;border-radius:7px;font:inherit;font-weight:700;text-align:center;text-decoration:none}
+.leaflet-popup-content .popup-route{background:var(--green);color:#fff}
+.popup-details{border:1px solid var(--line);background:#eef4ec;color:var(--ink)}
+#map.is-popup-open .leaflet-control-zoom{visibility:hidden}
+.place-dialog{width:min(530px,calc(100% - 24px));max-width:none;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);overflow:auto;overscroll-behavior:contain}
+.place-dialog::backdrop{background:#0d1b18aa}
+.place-dialog-head{position:sticky;top:0;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:#fff}
+.place-dialog-head h2{font-size:1.15rem;line-height:1.24;margin:0}
+.place-close{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:8px;background:#eef4ec;color:var(--ink);font:600 1.65rem/1 system-ui}
+.place-dialog-content{padding:13px 14px 16px}
+.place-event + .place-event{margin-top:15px;border-top:1px solid var(--line);padding-top:14px}
+.place-event h3{font-size:1.06rem;margin:0 0 7px}
+.place-event p{margin:6px 0}
+.place-event small{display:block;color:var(--muted);overflow-wrap:anywhere}
+.place-event a{display:inline-block;margin-top:6px}
+.leaflet-popup-content p{margin:.45em 0}.leaflet-popup-content a{color:var(--green)}.leaflet-popup-content strong{font-size:1.03em}
 .profile{display:grid;grid-template-columns:minmax(255px,1fr) minmax(0,1.85fr);gap:24px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:16px;scroll-margin-top:16px}.profile h2{font-size:clamp(1.35rem,2.6vw,2rem);letter-spacing:-.04em;line-height:1.16;margin:0 0 10px}.profile p{margin:0 0 10px;color:var(--muted);max-width:48ch}.profile .phone{display:inline-flex;align-items:center;background:#152f27;color:#fff;border-radius:9px;padding:9px 13px;font-size:.88rem;font-weight:700;text-decoration:none;margin:4px 0 9px}.profile .phone:hover{background:#246351}.profile .source-link{display:block;font-size:.78rem}.portraits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.portrait{display:block;width:100%;padding:0;border:0;border-radius:10px;background:#deddd3;overflow:hidden;cursor:zoom-in}.portrait img{display:block;width:100%;height:auto;aspect-ratio:9/14;object-fit:cover;object-position:center}.photo-dialog{max-width:min(96vw,660px);border:0;border-radius:14px;padding:8px;background:#172d27;color:#fff}.photo-dialog::backdrop{background:#0d1b18d9}.photo-dialog button{display:block;margin:0 0 6px auto;background:#fff;color:#172d27;border:0;border-radius:6px;padding:5px 10px}.photo-dialog img{display:block;max-height:76vh;max-width:100%;width:auto;height:auto;margin:auto;border-radius:7px}.pin.origin-pin{font-size:18px;box-shadow:0 0 0 3px #82347655,0 2px 6px #26332c85}
 .map-panel,.journal,.card{scroll-margin-top:10px}
 .map-help-touch,.filter-short{display:none}
 .browser-notice{margin:0 0 10px;border:1px solid var(--line);border-radius:12px;background:#fff}
 .browser-notice-row{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:6px 10px}
-.browser-notice-row p{margin:0;font-size:.875rem;color:var(--muted)}
+.browser-notice-row p{margin:0;font-size:.875rem;color:#000}
 .browser-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:5px 9px;border:1px solid #aec4b3;border-radius:8px;background:#eaf3eb;color:var(--ink);font-size:.875rem;font-weight:720;text-decoration:none;text-align:center}
 .browser-notice-row .browser-button{flex:none}
 .browser-help{border-top:1px solid var(--line);padding:9px 10px 10px;font-size:.875rem}
@@ -711,7 +729,8 @@ main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-item
   .intro{align-items:start;flex-direction:column;gap:7px;padding:14px 0}
   .intro h1{font-size:clamp(2rem,8.5vw,3.5rem);margin-bottom:7px}
   .intro p{font-size:.94rem}
-  .intro-actions{margin-top:8px}
+  .intro-summary{gap:8px}
+  .intro-actions a{padding-inline:8px}
   .date{white-space:normal;font-size:.81rem}
   main{padding-top:9px}
   .filters{width:96px}
@@ -734,6 +753,9 @@ main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-item
   .profile{grid-template-columns:1fr;padding:15px;gap:12px}
   .profile .phone{min-height:44px}
 }
+@media(max-width:360px){
+  .browser-notice-row .browser-button{flex:0 0 110px;line-height:1.2}
+}
 @media(pointer:coarse){
   .map-help-wheel{display:none}
   .map-help-touch{display:block}
@@ -746,10 +768,12 @@ main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-item
   <section class="intro">
     <div>
       <h1>Поиск Луны</h1>
-      <p>Луна пропала вечером 10 ноября у дома № 1 на ул. Матусевича. У наблюдений на карте пока нет подтверждения фото или видео.</p>
-      <div class="intro-actions">
-        <a href="#search-journal">Журнал</a>
-        <a href="#luna">Фото и контакт</a>
+      <div class="intro-summary">
+        <p>Луна пропала вечером 10 ноября у дома № 1 на ул. Матусевича. У наблюдений на карте пока нет подтверждения фото или видео.</p>
+        <div class="intro-actions">
+          <a href="#search-journal">Журнал</a>
+          <a href="#luna">Фото и контакт</a>
+        </div>
       </div>
     </div>
     <div class="date" id="date">Сводка на 18 ноября 2026, 17:04</div>
@@ -758,7 +782,7 @@ main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-item
 <main>
   <div class="browser-notice">
     <div class="browser-notice-row">
-      <p>Карта удобнее в обычном браузере.</p>
+      <p>Карту удобнее смотреть в обычном браузере</p>
       <a class="browser-button" id="open-browser" href="#browser-help" aria-controls="browser-help" aria-expanded="false">Открыть в браузере</a>
     </div>
     <div class="browser-help" id="browser-help" hidden>
@@ -785,6 +809,13 @@ main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-item
   </div>
 </section>
 <template id="yandex-maps-brand"><a class="yandex-map-brand" href="https://yandex.ru/maps/" target="_blank" rel="noopener noreferrer"><img src="data:image/png;base64,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" width="88" height="48" alt="Яндекс Карты"></a></template>
+<dialog class="place-dialog" id="place-details" aria-labelledby="place-details-title">
+  <div class="place-dialog-head">
+    <h2 id="place-details-title">Подробнее о месте</h2>
+    <form method="dialog"><button type="submit" class="place-close" aria-label="Закрыть описание" autofocus>×</button></form>
+  </div>
+  <div class="place-dialog-content" id="place-details-content"></div>
+</dialog>
 <dialog class="photo-dialog" id="luna-photo" aria-label="Фотография Луны">
   <form method="dialog"><button type="submit">Закрыть фото</button></form>
   <img alt="">
@@ -1233,6 +1264,9 @@ const filters = document.getElementById('filters');
 const fit = document.getElementById('fit');
 const mapPanel = document.getElementById('search-map');
 const mapHeading = document.getElementById('map-title');
+const placeDialog = document.getElementById('place-details');
+const placeTitle = document.getElementById('place-details-title');
+const placeContent = document.getElementById('place-details-content');
 const compactLayout = window.matchMedia('(max-width: 740px)');
 const records = window.lunaRecords;
 const searchAreas = {
@@ -1268,6 +1302,8 @@ if(map){
   });
 
   const surface = map.getContainer();
+  map.on('popupopen', () => surface.classList.add('is-popup-open'));
+  map.on('popupclose', () => surface.classList.remove('is-popup-open'));
   surface.addEventListener('click', () => map.scrollWheelZoom.enable(), {capture:true});
   document.addEventListener('pointerdown', event => {
     if (!surface.contains(event.target)) map.scrollWheelZoom.disable();
@@ -1425,6 +1461,33 @@ function setActive(id, fromMap){
   }
 }
 
+function showPlaceDetails(group) {
+  const selected = group.find(row => row[0] === active) ?? group[0];
+  const sharedPoint = group.length > 1;
+  placeTitle.textContent = sharedPoint ? 'Подробнее о месте' : selected[1];
+  const ordered = [selected, ...group.filter(row => row !== selected)];
+  placeContent.replaceChildren(...ordered.map(row => {
+    const [,name,kind,,where,when,source,note,,details] = row;
+    const event = make('article','place-event');
+    if (sharedPoint) event.append(make('h3','',name));
+    event.append(
+      make('small','',types[kind][0]+' · '+when),
+      make('p','',where),
+      make('p','',note),
+      make('small','',source),
+    );
+    if (details?.sourceUrl) {
+      const link = make('a','',details.sourceLabel);
+      link.href = details.sourceUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      event.append(link);
+    }
+    return event;
+  }));
+  placeDialog.showModal();
+}
+
 function mapFilterGutter() {
   return filters.offsetWidth + 14;
 }
@@ -1559,6 +1622,7 @@ function render(){
     }).addTo(layers);
     marker.getElement().style.setProperty('--color',types[kind][1]);
     const popup=make('div');
+    const popupRecords = make('div','popup-records');
     for(const [rid,title,rkind,,where,when] of group){
       const entry=make('p');
       const link=make('a','',title);
@@ -1574,11 +1638,17 @@ function render(){
       const label=make('strong');
       label.append(link);entry.append(label);
       entry.append(document.createElement('br'),document.createTextNode(types[rkind][0]+' · '+when));
-      popup.append(entry);markers.set(rid,marker);
+      popupRecords.append(entry);markers.set(rid,marker);
     }
-    const routeLink = make('a','popup-route','Открыть в Яндекс Картах');
+    const actions = make('div','popup-actions');
+    const routeLink = make('a','popup-action popup-route','Открыть в Яндекс Картах');
     routeLink.href = routeUrl;
-    popup.append(routeLink);
+    const detailsButton = make('button','popup-action popup-details','Подробнее о месте');
+    detailsButton.type = 'button';
+    detailsButton.setAttribute('aria-haspopup','dialog');
+    detailsButton.addEventListener('click', () => showPlaceDetails(group));
+    actions.append(routeLink, detailsButton);
+    popup.append(popupRecords, actions);
     marker.bindPopup(popup, popupLayout());
     marker.on('click',()=>setActive(id,true));
   }
