@@ -736,6 +736,7 @@ main{padding:12px 0 28px}.filter,.reset{display:inline-flex;gap:.4rem;align-item
   .filters{width:96px}
   .filters .filter{min-height:44px;padding:4px 5px;gap:4px}
   .filter .dot{width:7px;height:7px}
+  .filters .filter[data-filter=h]{padding-inline:3px;gap:3px;font-size:.8125rem}
   .filter-full{display:none}
   .filter-short{display:inline}
   .workspace{grid-template-columns:minmax(0,1fr);gap:12px}
@@ -1256,7 +1257,7 @@ const types = {
   h:['Возможные укрытия','#007b89'],
 };
 const shortFilterLabels = {
-  all:'Все', o:'Пропажа', s:'Видели', d:'Искали', t:'Проверить', h:'Укрытия',
+  all:'Все', o:'Пропажа', s:'Видели', d:'Искали', t:'Проверить', h:'Возможные укрытия',
 };
 const journal = document.getElementById('records');
 
